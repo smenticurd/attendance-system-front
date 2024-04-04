@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abyssinica+SIL">
+    <link rel="stylesheet" href="../../assets/styles/teach-cou.css">
+    <title>Teacher Course Page</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="logo">
+                </div>
+                <div class="admin">
+                    <div class="admin-details">
+                        <div class="admin-info">
+                            <p>NAME SURNAME:</p> 
+                            <p id="name">PALENSHEEVA PALENSHE</p>
+                        </div>
+                        <div class="admin-info">
+                            <p>LAST LOGIN DATE:</p> 
+                            <p id="login-date">08 FEB 2024</p>
+                        </div>
+                        <div class="admin-info">
+                            <p>STATUS:</p> 
+                            <p id="statusName">TEACHER</p>
+                        </div>
+                    </div>
+                    <div class="icon" style="background-image: url(../../assets/images/icon.png);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="main__wrapper">
+                <div class="sidebar__wrapper">
+                    <nav class="menu">
+                        <a href="./home-page.html">HOME PAGE</a>
+                        <a href="./schedule-page.html">Course schedule</a>
+                        <a href="#" id="selected">start course</a>
+                        <a href="./attendence-page.html">set ATTENDANCE</a>
+                        <a href="./absences-page.html">absence reasons</a>
+                        <a href="./profile-page.html">my profile</a>
+                        <form action="" class="logout">
+                            <button >Log out</button>
+                        </form>
+                    </nav>
+                </div>
+                <div class="main__content">
+                    <div class="page-name">
+                        <h1>START OF COURSES</h1>
+                    </div>
+                    <div class="courses">
+                        <div class="course">
+                            <div class="course-name">
+                                <p><span class="code">CSS 228.01P</span> - ADVANCED ALGORITHM</p>
+                            </div>
+                            <form action="">
+                                <button id="startLessonButton" style="background-color: #F3C997" class="btn">START</button>
+                                <button id="endLessonButton" style="background-color: #FED66D;" class="btn">END</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="start" style="display: none; background-color: green;">LESSON HAS BEGUN!</p>
+                        <p class="end" style="display: none; background-color: red;">LESSON IS OVER!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const startLessonButton = document.getElementById('startLessonButton');
+            const endLessonButton = document.getElementById('endLessonButton');
+            const startMessage = document.querySelector('.start');
+            const endMessage = document.querySelector('.end');
+
+            startLessonButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                startMessage.style.display = 'block';
+                endMessage.style.display = 'none';
+            });
+
+            setTimeout(() => {
+                startMessage.style.display = 'none';}, 3000000);
+
+            endLessonButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                startMessage.style.display = 'none';
+                endMessage.style.display = 'block'; 
+            });
+
+            setTimeout(() => {
+                endMessage.style.display = 'none';}, 600000);
+        });
+    </script>
+</body>
+</html>
